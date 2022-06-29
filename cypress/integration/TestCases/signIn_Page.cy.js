@@ -33,8 +33,8 @@ describe("Sign In Page",()=>{
     cy.email(this.data.invalidemail)
     sign.emailButton()
     sign.invalidassert()    
-    cy.get('#ap_password').type(this.data.invalidpass)
-    cy.get('#signInSubmit').click()    
+    cy.password(this.data.invalidpass)
+    sign.submit()    
     
     })
 })
