@@ -7,14 +7,17 @@ describe("Sign In Page",()=>{
         cy.fixture("homepage").then(
             function(data){
                 this.data=data
-            }
-        )
+            }            
+        )        
+     })
+
+     beforeEach(function(){
+        cy.visit(this.data.url)
      })
 
      const sign = new signInPage()
     
-   it("Go to Sign In Valid data",function(){
-       cy.visit(this.data.url)
+   it("Go to Sign In Valid data",function(){       
        sign.mouseover()
        sign.signin()       
        cy.email(this.data.email)
@@ -26,8 +29,7 @@ describe("Sign In Page",()=>{
        
    })
 
-   it("Go to Sign In InValid data",function(){
-    cy.visit(this.data.url)
+   it("Go to Sign In InValid data",function(){    
     sign.mouseover()
     sign.signin()       
     cy.email(this.data.invalidemail)
