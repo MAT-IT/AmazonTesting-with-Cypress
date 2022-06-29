@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+import signInPage from "../PageObjectRepository/signInPAge"
+
 describe("Sign In Page",()=>{
     beforeEach(function(){        
         cy.fixture("homepage").then(
@@ -8,22 +11,22 @@ describe("Sign In Page",()=>{
         )
      })
 
-     
+     const sign = new signInPage()
     
    it("Go to Sign In Valid data",function(){
        cy.visit(this.data.url)
-       cy.get('#nav-link-accountList').trigger("mouseover")
-       cy.get('#nav-flyout-ya-signin > .nav-action-button > .nav-action-inner').click({force: true})       
-       cy.get('#ap_email').type(this.data.email)
-       cy.get('.a-button-inner > #continue').click()
-       cy.get('#ap_password').type(this.data.password)
-       cy.get('#signInSubmit').click()
+       sign.mouseover().trigger("mouseover")
+       sign.signin().click({force: true})       
+       sign.email().type(this.data.email)
+       sign.emailButton().click()
+       sign.password().type(this.data.password)
+       sign.submit().click()
        cy.get('#nav-link-accountList-nav-line-1').contains("mat")      
        
        
    })
 
-   it("Go to Sign In InValid data",function(){
+   it.skip("Go to Sign In InValid data",function(){
     cy.visit(this.data.url)
     cy.get('#nav-link-accountList').trigger("mouseover")
     cy.get('#nav-flyout-ya-signin > .nav-action-button > .nav-action-inner').click({force: true})
