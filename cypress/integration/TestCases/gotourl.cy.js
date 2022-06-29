@@ -12,7 +12,7 @@ describe("Go Amazon",()=>{
    it("Go to url",function(){
        cy.visit(this.data.url)
        cy.get('#nav-logo-sprites').should("be.visible")
-       cy.title("contain","Amazon")
+       cy.title().should("contain","Amazon")
        
    })
 
