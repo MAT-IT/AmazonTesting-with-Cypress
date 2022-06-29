@@ -1,11 +1,13 @@
-import Amazonhomepage from "../integration/PageObjectRepository/searchBox"
+import signInPage from "../integration/PageObjectRepository/signInPAge"
 
-Cypress.Commands.add("searchProduct",(productName)=>{
-    
-    const amazonhomepage = new Amazonhomepage()
+const sign = new signInPage()
+Cypress.Commands.add("email", (email) => {
 
-    amazonhomepage.getsearchbar().click().wait(3000).type(productName)
-    .wait(2000)
-    amazonhomepage.getsubmitbutton().click().wait(2000)    
+    sign.email().type(email)
+
+})
+Cypress.Commands.add("password", (password) => {
     
+    sign.password().type(password)
+
 })
