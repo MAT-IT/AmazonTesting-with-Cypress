@@ -1,0 +1,16 @@
+{
+  "name": "AmazonTesting_with_Cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-dashboard":"npx cypress run --record --key 9491cce7-8628-4922-92ab-eef3dad52265"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.7.0"
+  }
+}
