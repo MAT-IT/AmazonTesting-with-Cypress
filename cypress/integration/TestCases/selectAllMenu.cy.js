@@ -1,9 +1,35 @@
 /// <reference types="cypress" />
+
+import HomePage from "../PageObjectRepository/HomePage"
+
 describe("Select All Menu",()=>{
+    beforeEach(function(){        
+        cy.fixture("smarthomedata").then(
+            function(data){
+                this.data=data
+            }            
+        )           
+   })
+    const AllMenu = new HomePage()
     it("All menu Smart Home",()=>{
         cy.goUrl()
-        cy.get('#nav-hamburger-menu').click()
-        cy.get('.hmenu-visible > :nth-child(9) > .hmenu-item').click()
-        cy.get('ul[data-menu-id="7" ] a[class="hmenu-item"]').should("have.length","16")
+        AllMenu.getAllMenu().click()
+        AllMenu.getSmarthome().click()
+        AllMenu.getAllSmartHomeDep().should("have.length","16")
+        
+    })
+    it.only("Verifying smarthomedep",function(){
+        //verify that Amazon Smart Home and Smart Home Lighting are sub catogories of smarthome
+        cy.goUrl()
+        AllMenu.getAllMenu().click()
+        AllMenu.getSmarthome().click()
+        for(let i=0; i<this.data.arr.length;i++){
+        cy.contains(this.data.arr[i]).should("be.visible")
+        cy.log("goruyormusun")
+        
+        }
+        
+
+
     })
 })
