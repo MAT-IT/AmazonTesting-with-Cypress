@@ -16,17 +16,7 @@ Cypress.Commands.add("searchProduct", (input) => {
   search.getsubmitbutton().click()
 })
 
-const sign = new signInPage()
-beforeEach(function () {
-  cy.fixture("homepage").then(
-    function (data) {
-      this.data = data
-    }
-  )
-  cy.visit("https://www.amazon.com/")
-  sign.hellomenu().trigger("mouseover")
-  sign.signin().click({ force: true })
-})
+
 
 
 Cypress.Commands.add("SignIn", function () {
