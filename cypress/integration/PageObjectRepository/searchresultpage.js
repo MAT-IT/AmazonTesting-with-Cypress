@@ -19,8 +19,13 @@ class searchresultpage {
 
     }
 
-    gocartproduct1(){
+    gocartproduct(){
         return   cy.get("span[class='a-truncate a-size-medium'] span[class='a-truncate-full a-offscreen']")
+    }
+    
+    subtotal(){
+        return cy.get("#sc-subtotal-amount-buybox span")
+
     }
 }
 export default searchresultpage

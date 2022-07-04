@@ -20,5 +20,9 @@ class HomePage {
         return cy.get('ul[data-menu-id="7" ] a[class="hmenu-item"]')
     }
 
+    getButtomAdvertisingLink(){
+        return cy.get('tbody > :nth-child(1) > :nth-child(3) > .nav_a')
+    }
+
 }
  export default HomePage
