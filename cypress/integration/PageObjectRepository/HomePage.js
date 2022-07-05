@@ -24,5 +24,12 @@ class HomePage {
         return cy.get('tbody > :nth-child(1) > :nth-child(3) > .nav_a')
     }
 
+    getButtomBusinessLink(){
+        return cy.get(':nth-child(3) > :nth-child(3) > .nav_a')
+    }
+
+    getButtonBoxOfficeLink(){
+        return cy.get(':nth-child(5) > :nth-child(3) > .nav_a')
+    }
 }
  export default HomePage
