@@ -9,7 +9,7 @@ describe("testing bottom links", () => {
         cy.visit("https://www.amazon.com/")
     })
 
-    it.skip("advert links test verify", () => {
+    it("advert links test verify", () => {
 
         homepage
             .getButtomAdvertisingLink().then(function (e) {
@@ -23,7 +23,7 @@ describe("testing bottom links", () => {
 
     })
 
-    it.skip("business links test verify", () => {
+    it("business links test verify", () => {
 
         homepage
             .getButtomBusinessLink().then(function (e) {
