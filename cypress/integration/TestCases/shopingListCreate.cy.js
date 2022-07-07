@@ -1,22 +1,25 @@
 /// <reference types="cypress" />
 import HomePage from "../PageObjectRepository/HomePage"
-const homepage = new HomePage
+import ShoppingListPage from "../PageObjectRepository/ShoppingListPAge"
+const homepage = new HomePage()
+const shoppingListPage = new ShoppingListPage()
 describe("create and delete Shopping List",()=>{
     it("Create Shopping List",()=>{
         cy.goUrl()
         cy.SignIn()
         homepage.getaccountList().trigger("mouseover").wait(5000)
-        homepage.getcreateList().click({force: true})
-        homepage.getlistTab().should("have.contain","Your List")
-        homepage.getcreateButton().click({force: true})
-        homepage.getcreateListButton().click({ multiple: true },{force: true})
-        homepage.getlistName().should("have.contain","Shopping List ").wait(3000)
-        homepage.getmorebutton().trigger("mouseover").wait(4000)
-        homepage.getmanagelist().click({force: true})
-        homepage.getscroll().scrollIntoView()
-        homepage.getdeletebutton().click({force: true})
-        homepage.getverfconfirmdelete().should("have.contain","Confirm delete")
-        homepage.getconfirmdelete().click({force: true})
+        homepage.getcreateListlink().click({force: true})
+        shoppingListPage.getlistTab().should("have.contain","Your List")
+        shoppingListPage.getcreateAListbutton().click().wait(2000)
+        shoppingListPage.getinputlistname().clear().wait(3000)
+        shoppingListPage.getinputlistname().type("Grocery List")
+        shoppingListPage.getcreateButton().click({force: true})
+        shoppingListPage.getlistName().should("have.contain","Grocery List").wait(3000)
+        shoppingListPage.getmorebutton().trigger("mouseover").wait(4000)
+        shoppingListPage.getmanagelist().click({force: true})
+        shoppingListPage.getdeletebutton().click({force: true})
+        shoppingListPage.getverfconfirmdelete().should("have.contain","Confirm delete")
+        shoppingListPage.getconfirmdelete().click({force: true})
 
     })
 

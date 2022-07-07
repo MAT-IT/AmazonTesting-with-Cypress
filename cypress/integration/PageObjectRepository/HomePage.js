@@ -34,17 +34,17 @@ class HomePage {
     getaccountList(){
         return cy.get('#nav-link-accountList')
     }
-    getcreateList(){
+    getcreateListlink(){
         return cy.get('[href="/hz/wishlist/ls?triggerElementID=createList&ref_=nav_ListFlyout_navFlyout_createList_lv_redirect"] > .nav-text')
+    }
+    getcreateAListbutton(){
+        return cy.get('.a-button-input')
     }
     getlistTab(){
         return cy.get('.a-tabs')
     }
     getcreateButton(){
-        return cy.get('#wl-list-entry-title-1DFT78S5G8ALK')
-    }
-    getcreateListButton(){
-        return cy.get("#wl-redesigned-create-list")
+        return cy.contains("Create List")
     }
     getlistName(){
         return cy.get('#left-nav .wl-list ')
@@ -55,9 +55,7 @@ class HomePage {
     getmanagelist(){
         return cy.get("#editYourList")
     }
-    getscroll(){
-        return cy.get('.a-scroller')
-    }
+   
     getdeletebutton(){
         return cy.get("div[id='list-settings-container'] span[class='a-button a-spacing-base a-button-base full-width-element']")
     }
@@ -66,6 +64,9 @@ class HomePage {
     }
     getconfirmdelete(){
         return cy.get("#list-delete-confirm").click()
+    }
+    getinputlistname(){
+        return cy.get(".a-declarative #list-name")
     }
 }
  export default HomePage
