@@ -6,7 +6,7 @@ class searchresultpage {
     productlist2(){
         return cy.get("h2 a span[class='a-size-base-plus a-color-base a-text-normal']")
     }
-
+    //productinfopage e aktar ve importunu duzenle
     addchart(){
     return cy.get('#add-to-cart-button')
     }
@@ -31,6 +31,7 @@ class searchresultpage {
         return cy.get("#sc-subtotal-amount-buybox span")
 
     }
+    //
     addtolistmenu(){
         return cy.get('#add-to-wishlist-button-submit')
     }

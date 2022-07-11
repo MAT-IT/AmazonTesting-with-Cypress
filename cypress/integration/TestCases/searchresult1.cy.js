@@ -1,3 +1,6 @@
+//ismi searchfunction olarak degistir
+//locatleri pom dan al
+
 describe("search items",()=>{
     it("search lenovo",function(){
         cy.goUrl().wait(3000)

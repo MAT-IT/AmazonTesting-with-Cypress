@@ -14,7 +14,7 @@ beforeEach(function(){
 })
 
 Cypress.Commands.add("goUrl", () => {
-  cy.visit("https://www.amazon.com/")
+  cy.visit(this.data.url)
 })
 
 Cypress.Commands.add("searchProduct", (input) => {
@@ -29,7 +29,5 @@ Cypress.Commands.add("SignIn", function () {
   sign.emailButton().click()
   sign.password().type(this.data.password)
   sign.submit().click()
-  sign.validassert().should("contain.text", "mat")
-
-
+  
 })

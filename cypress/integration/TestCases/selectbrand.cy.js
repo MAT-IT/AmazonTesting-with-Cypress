@@ -1,6 +1,9 @@
+//filterfuction olarak degistir
+//locatleri pom dan al
+
 describe("search items",()=>{
     
-    it("search lenovo",()=>{
+    it("sort by brand",()=>{
         cy.goUrl().wait(3000)
         cy.searchProduct("Headphones").wait(3000)
         cy.get("li[id='p_89/Sony'] input[type='checkbox']").click({force: true})

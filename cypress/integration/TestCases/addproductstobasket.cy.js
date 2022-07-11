@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import searchresultpage from "../PageObjectRepository/searchresultpage"
-
+//test casin ismini addtocartfunction olarak degistir
 const search = new searchresultpage()
 describe("add items", () => {
   //const sign = new signInPage()

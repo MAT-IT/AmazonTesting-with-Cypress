@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-
+//ismi signinfunction diye degistir
 import signInPage from "../PageObjectRepository/signInPAge"
 
 describe("Sign In Page",()=>{

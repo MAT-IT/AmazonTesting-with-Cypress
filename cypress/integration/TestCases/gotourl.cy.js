@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+//ismi gotoamazon olarak degistir
 describe("Go Amazon",()=>{
     before(function(){
         cy.fixture("homepage").then(
