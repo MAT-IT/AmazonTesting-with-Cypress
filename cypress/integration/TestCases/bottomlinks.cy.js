@@ -29,12 +29,12 @@ describe("testing bottom links", () => {
             .getButtomBusinessLink().then(function (e) {
                 const bustext = e.text().substring(7, 15)
                 cy.log(bustext)
-        homepage
-             .getButtomBusinessLink().click()
-         cy.title().should("contain", bustext)
+                homepage
+                    .getButtomBusinessLink().click()
+                cy.title().should("contain", bustext)
 
             })
-            
+
     })
 
     it("box office links test verify", () => {
@@ -43,14 +43,14 @@ describe("testing bottom links", () => {
             .getButtonBoxOfficeLink().then(function (e) {
                 const bustext = e.text().substring(7, 15)
                 cy.log(bustext)
-        homepage
-              .getButtonBoxOfficeLink().click()
-        cy.title().should("contain", bustext)
+                homepage
+                    .getButtonBoxOfficeLink().click()
+                cy.title().should("contain", bustext)
 
             })
-            
+
     })
-    
+
 
 
 })

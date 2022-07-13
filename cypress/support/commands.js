@@ -6,14 +6,14 @@ Cypress.on('uncaught:exception', (err, runnable) => { //with this we can handle 
 const search = new HomePage()
 const sign = new signInPage()
 beforeEach(function(){        
-  cy.fixture("homepage").then(
+  cy.fixture("Data").then(
       function(data){
           this.data=data
       }            
   )
 })
 
-Cypress.Commands.add("goUrl", () => {
+Cypress.Commands.add("goUrl", function() {
   cy.visit(this.data.url)
 })
 

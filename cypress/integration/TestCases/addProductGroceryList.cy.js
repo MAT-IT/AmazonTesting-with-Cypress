@@ -11,8 +11,8 @@ describe("Add product to Grocery List",()=>{
     it("Add Product to Grocery List",()=>{
         cy.goUrl()
         cy.SignIn()
-        // homepage.getaccountList().trigger("mouseover").wait(5000)
-        // homepage.getcreateListlink().click({force: true})
+        // homepage.gethellomenu().trigger("mouseover").wait(5000)
+        // homepage.getcreateshoppinglistlink().click({force: true})
         // shoppingListPage.getcreateAListbutton().click().wait(2000)
         // shoppingListPage.getlistName().clear().wait(3000)
         // shoppingListPage.getlistName().type("Grocery List")

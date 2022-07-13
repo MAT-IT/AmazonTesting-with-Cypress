@@ -2,7 +2,7 @@
 //ismi gotoamazon olarak degistir
 describe("Go Amazon",()=>{
     before(function(){
-        cy.fixture("homepage").then(
+        cy.fixture("Data").then(
             function(data){
                 this.data=data
             }

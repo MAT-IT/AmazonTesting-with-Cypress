@@ -5,7 +5,7 @@ const search = new searchresultpage()
 describe("add items", () => {
   //const sign = new signInPage()
   beforeEach(function () {
-    cy.fixture("homepage").then(
+    cy.fixture("Data").then(
       function (data) {
         this.data = data
       }

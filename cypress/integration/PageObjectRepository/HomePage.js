@@ -11,12 +11,12 @@ class HomePage {
     getAllMenu(){
         return cy.get("div[class='nav-left'] a[id='nav-hamburger-menu']")
     }
-    //smarthomelink
-    getSmarthome(){
+    
+    getSmarthomelink(){
         return cy.get('.hmenu-visible > :nth-child(9) > .hmenu-item')
     }
-    //smarthomesubcategories
-    getAllSmartHomeDep(){
+    
+    getSmartHomesubCategories(){
         return cy.get('ul[data-menu-id="7" ] a[class="hmenu-item"]')
     }
 
@@ -31,12 +31,12 @@ class HomePage {
     getButtonBoxOfficeLink(){
         return cy.get(':nth-child(5) > :nth-child(3) > .nav_a')
     }
-    //hellomenu
-    getaccountList(){
+    //accountList++++
+    gethellomenu(){
         return cy.get('#nav-link-accountList')
     }
-    //createshoppinglistlink
-    getcreateListlink(){
+    //createListlink++++++
+    getcreateshoppinglistlink(){
         return cy.get('[href="/hz/wishlist/ls?triggerElementID=createList&ref_=nav_ListFlyout_navFlyout_createList_lv_redirect"] > .nav-text')
     }
     //asagidaki loc lari shopping list page attim, ilgili sayfalara import yapip bunlari silllllll  

@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
-//ismi signinfunction diye degistir
+//ismi signinfunction diye degistir. 
 import signInPage from "../PageObjectRepository/signInPAge"
 
 describe("Sign In Page",()=>{
     beforeEach(function(){        
-        cy.fixture("homepage").then(
+        cy.fixture("Data").then(
             function(data){
                 this.data=data
             }            
