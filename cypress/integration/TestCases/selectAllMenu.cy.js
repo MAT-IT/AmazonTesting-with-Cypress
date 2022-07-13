@@ -18,7 +18,7 @@ describe("Select All Menu",()=>{
         AllMenu.getSmartHomesubCategories().should("have.length","16")
         
     })
-    it("Verifying smarthomedep",function(){
+    it.skip("Verifying smarthomedep",function(){
         //verify that Amazon Smart Home and Smart Home Lighting are sub catogories of smarthome
         cy.goUrl()
         AllMenu.getAllMenu().click()

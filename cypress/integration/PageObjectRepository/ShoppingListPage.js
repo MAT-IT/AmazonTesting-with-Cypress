@@ -24,7 +24,8 @@ class ShoppingListPage {
     }
    
     getdeleteshoppinglistbutton(){
-        return cy.get("div[id='list-settings-container'] span[class='a-button a-spacing-base a-button-base full-width-element']")
+        //return cy.get("div[id='list-settings-container'] span[class='a-button a-spacing-base a-button-base full-width-element']")
+        return cy.contains("Delete")
     }
     
     getshoppinglistdeletepopupconfirmation(){
@@ -32,7 +33,7 @@ class ShoppingListPage {
     }
     
     getconfirmdelete(){
-        return cy.contains("Yes")
+        return cy.get("#list-delete-confirm input[name='submit.save']")
     }
 
     getitemdeletebutton(){

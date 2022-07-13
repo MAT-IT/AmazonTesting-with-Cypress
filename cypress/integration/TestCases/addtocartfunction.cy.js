@@ -11,10 +11,11 @@ describe("add items", () => {
         this.data = data
       }
     )
-    cy.visit(this.data.url)
+
   })
   it("add products to basket", function () {
-    cy.searchProduct("sony").wait(3000)
+    cy.visit(this.data.url)
+    cy.searchProduct("headphone").wait(3000)
     search.productlist().eq(0).then(str => {
       const name1 = str.text()
       cy.wrap(name1).as("name1")
@@ -42,7 +43,7 @@ describe("add items", () => {
 
     })
     productinfo.addchart().click({ force: true })
-    productinfo.gotocart().click({force:true})
+    productinfo.gotocart().click({ force: true })
     productinfo.getcartproductname().eq(0).then(function (e) {
       const cartname1 = e.text().substring(0, 7)
       cy.log(cartname1)
@@ -55,10 +56,10 @@ describe("add items", () => {
       expect(this.name1).to.contain(cartname)
     })
 
-    search.subtotal().then(function(e){
+    search.subtotal().then(function (e) {
       const totalprice = Number(e.text().replace("$", ""))
       cy.log(totalprice)
-      expect(this.price1+this.price2).to.equal(totalprice)
+      expect(this.price1 + this.price2).to.equal(totalprice)
     })
   })
 })
