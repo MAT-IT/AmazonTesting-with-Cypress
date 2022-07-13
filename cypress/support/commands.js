@@ -3,7 +3,7 @@ import signInPage from "../integration/PageObjectRepository/signInPAge"
 Cypress.on('uncaught:exception', (err, runnable) => { //with this we can handle uncaught:exception in cypress
   return false;                                      //commands.js file'a alinabilir
 });
-const search = new HomePage()
+const homepage = new HomePage()
 const sign = new signInPage()
 beforeEach(function(){        
   cy.fixture("Data").then(
@@ -18,16 +18,16 @@ Cypress.Commands.add("goUrl", function() {
 })
 
 Cypress.Commands.add("searchProduct", (input) => {
-  search.getsearchbar().click().wait(3000).type(input)
-  search.getsubmitbutton().click()
+  homepage.getsearchbar().click().wait(3000).type(input)
+  homepage.getsearchsubmitbutton().click()
 })
 
 Cypress.Commands.add("SignIn", function () {
-  sign.hellomenu().trigger("mouseover")
-  sign.signin().click({force: true})
-  sign.email().type(this.data.email)
+  homepage.hellomenu().trigger("mouseover")
+  homepage.signin().click({force: true})
+  sign.getemailbox().type(this.data.email)
   sign.emailButton().click()
-  sign.password().type(this.data.password)
-  sign.submit().click()
+  sign.getpasswordbox().type(this.data.password)
+  sign.getloginsubmitbutton().click()
   
 })

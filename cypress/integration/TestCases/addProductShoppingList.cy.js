@@ -1,6 +1,4 @@
 /// <reference types="cypress" />
-//test casein ismini addproductshoppinglist olarak degistir
-
 import HomePage from "../PageObjectRepository/HomePage"
 import searchresultpage from "../PageObjectRepository/searchresultpage"
 import ShoppingListPage from "../PageObjectRepository/ShoppingListPAge"
@@ -13,10 +11,11 @@ describe("Add product to Grocery List",()=>{
         cy.SignIn()
         // homepage.gethellomenu().trigger("mouseover").wait(5000)
         // homepage.getcreateshoppinglistlink().click({force: true})
-        // shoppingListPage.getcreateAListbutton().click().wait(2000)
-        // shoppingListPage.getlistName().clear().wait(3000)
-        // shoppingListPage.getlistName().type("Grocery List")
-        // shoppingListPage.getcreateButton().click({force: true})
+        // shoppingListPage.getyourlistTab().should("have.contain","Your List")
+        // shoppingListPage.getcreateshoppingalistbuttom().click().wait(2000)
+        // shoppingListPage.getcreateshoppinglistnamebox().clear().wait(3000)
+        // shoppingListPage.getcreateshoppinglistnamebox().type("Grocery List")
+        // shoppingListPage.getcreatelistbutton().click({force: true})
         cy.searchProduct("honey")
         //searchResultpage.productlist().eq(0).click()
         searchResultpage.productlist2().eq(0).click()
@@ -24,7 +23,6 @@ describe("Add product to Grocery List",()=>{
         cy.contains("Grocery List").click()
         shoppingListPage.getitemdeletebutton().click({force: true})
         shoppingListPage.getitemdeleteconfirmation().should("be.visible")
-
       
 
     })

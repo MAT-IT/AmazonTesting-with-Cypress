@@ -1,6 +1,4 @@
 class productInfoPage {
-    
-    //importunu duzenle
     addchart(){
     return cy.get('#add-to-cart-button')
     }
@@ -13,8 +11,8 @@ class productInfoPage {
         return cy.get('#sw-gtc .a-button-text')
 
     }
-    //getcartproductname
-    gocartproduct(){
+    
+    getcartproductname(){
         return   cy.get("span[class='a-truncate a-size-medium'] span[class='a-truncate-full a-offscreen']")
     }
     //addtoshoppinglistmenu

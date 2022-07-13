@@ -25,11 +25,8 @@ describe("Select All Menu",()=>{
         AllMenu.getSmarthomelink().click()
         for(let i=0; i<this.data.arr.length;i++){
         cy.contains(this.data.arr[i]).should("be.visible")
-        cy.log("goruyormusun")
-        
-        }
-        
-
+        cy.log("goruyormusun")        
+        }      
 
     })
 })

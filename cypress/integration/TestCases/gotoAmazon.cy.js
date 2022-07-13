@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
-//ismi gotoamazon olarak degistir
+
+import HomePage from "../PageObjectRepository/HomePage"
+
 describe("Go Amazon",()=>{
     before(function(){
         cy.fixture("Data").then(
@@ -8,11 +10,11 @@ describe("Go Amazon",()=>{
             }
         )
      })
-   
+   const homepage = new HomePage()
 
    it("Go to url",function(){
        cy.visit(this.data.url)
-       cy.get('#nav-logo-sprites').should("be.visible")
+       homepage.getamazonLogo().should("be.visible")
        cy.title().should("contain","Amazon")
        
    })
