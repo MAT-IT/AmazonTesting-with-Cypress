@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-dashboard":"./node_modules/.bin/cypress run --record --key 9491cce7-8628-4922-92ab-eef3dad52265",
+    "test-dashboard":"./node_modules/.bin/cypress run --record --key 9d935ff3-5f52-4118-8a6f-b955170f37cc",
     "all-test":"./node_modules/.bin/cypress run"
   },
   "keywords": [],
